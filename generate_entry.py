@@ -10,7 +10,7 @@ day_of_week = today.strftime("%A")
 
 # Define the entry
 month_folder = os.path.join(year, month)
-entry_path = os.path.join(month_folder, f"{day}.txt")
+entry_path = os.path.join(month_folder, f"{day}.md")
 
 # Create month folder if it doesn't exist
 os.makedirs(month_folder, exist_ok=True)
@@ -19,7 +19,7 @@ os.makedirs(month_folder, exist_ok=True)
 if not os.path.exists(entry_path):
     with open(entry_path, "w") as file:
         file.write(f"Date: {day_of_week}, {month} {day}, {year}\n\n")
-        file.write("What I learned today:\n\n")
+        file.write("# What I learned today:\n\n")
 
     print(f"Entry created: {entry_path}")
 else:
